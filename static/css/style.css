@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/*/////////////////////////////////////////////////
+//twitter風チャット画面(会話方式)を記事に表示する方法
+/////////////////////////////////////////////////*/
+.twitter__container {
+    padding: 0;
+    background: rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 80%;
+    border: solid 1px #eeeeee;
+}
+
+.twitter__container a {
+    color: #58aeed;
+}
+
+/* タイトル部分 */
+.twitter__container .twitter__title {
+    background: #58aeed;
+    padding: 10px;
+    text-align: center;
+    font-size: 150%;
+    color: #ffffff;
+}
+
+.twitter__container .twitter__title .twitter-logo {
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url(../../static/img/svg/twitter-logo.svg) center no-repeat;
+}
+
+.twitter__container .twitter__title span {
+    font-size: 20px;
+}
+
+/* タイムライン部分 */
+.twitter__container .twitter__contents {
+    overflow: hidden;
+    position: relative;
+    line-height: 135%;
+}
+
+.twitter__container .twitter__contents.scroll {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.twitter__container .twitter__block {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: solid 1px #eeeeee;
+    overflow: hidden;
+}
+
+.twitter__container .twitter__block:last-child {
+    border-bottom: solid 0px;
+}
+
+/* アイコン画像 */
+.twitter__container .twitter__block figure {
+    width: 50px;
+    padding: 0;
+    margin: 0;
+    float: left;
+    width: 50px;
+}
+
+/* 正方形を用意 */
+.twitter__container .twitter__block figure img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+/* コメントエリア */
+.twitter__container .twitter__block-text {
+    margin: 0;
+    position: relative;
+    margin-left: 60px;
+    padding-right: 10px;
+}
+
+.twitter__container .twitter__block-text .name {
+    font-weight: bold;
+}
+
+.twitter__container .twitter__block-text .name .name_reply {
+    color: #8a9aa4;
+    margin-left: 10px;
+}
+
+.twitter__container .twitter__block-text .date {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    text-align: right;
+    color: #8a9aa4;
+}
+
+/* 本文 */
+.twitter__container .twitter__block-text .text {
+    margin: 5px 0;
+}
+
+/* 画像を貼る場合 */
+.twitter__container .twitter__block-text .text .in-pict img {
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    margin: 5px 0;
+    width: 95%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/*///////////////////////////////////////////
+//埋め込みアイコン
+////////////////////////////////////////////*/
+
+.twitter__container .twitter__icon br {
+    display: none;
+}
+
+.twitter__container .twitter__icon .twitter-bubble {
+    width: 14px;
+    height: 14px;
+    display: block;
+    padding-left: 20px;
+    background: url("../img/svg/twitter-bubble.svg") left no-repeat;
+    width: 20%;
+    float: left;
+    color: #8a9aa4;
+}
+
+.twitter__container .twitter__icon .twitter-heart {
+    width: 14px;
+    height: 14px;
+    display: block;
+    padding-left: 20px;
+    background: url("../img/svg/twitter-heart.svg") left no-repeat;
+    width: 20%;
+    float: left;
+    color: #8a9aa4;
+}
+
+.twitter__container .twitter__icon .twitter-loop {
+    width: 14px;
+    height: 14px;
+    display: block;
+    padding-left: 20px;
+    background: url("../img/svg/twitter-loop.svg") left no-repeat;
+    width: 20%;
+    float: left;
+    color: #8a9aa4;
+}
+
+
+/* header */
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+:root {
+    --header-font: 'Ubuntu Mono', monospace; /* ヘッダーのフォント */
+    --header-background: #222222; /* ヘッダーの背景色 */
+    --all-background: #fff0df; /* ヘッダーの文字の色及び全画面の背景色 */
+}
+
+/*  フォントコレクション
+    'Ubuntu Mono', monospace;
+    'Caveat', cursive;
+    'Noto Sans JP', sans-serif;
+*/
+
+/* カラーコレクション
+    オレンジ: FFF0D8, FFE7BF
+    sky blue: CEE2EA, B6DBEA
+*/
+
+
+body {
+    background: var(--all-background);
+    padding-top: 10em;
+    transition: all 0.3s ease-out; /* pos-neg変更時の色の変化の際 */
+}
+
+
+.header {
+    position: fixed; /* fixed だと画面スクロールの際にヘッダーが固定される。解除したい場合は static に */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: var(--header-background);
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    z-index: 1;
+}
+
+.header .wrapper {
+    margin: 0 auto;
+    width: 90%;
+    background: var(--header-background);
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* ヘッダーに表示するテキストの設定 */
+.header-name-outer {
+    color: var(--all-background);
+    font-family: var(--header-font);
+    font-size: 72px;
+    margin: auto 0;
+    text-align: center;
+}
+
+.header-name {
+    transition: all 0.3s ease-out; /* pos-neg変更時の色の変化の際 */
+}
+
+/* お買い物パンダの設定 */
+.header-logo-outer {
+    margin: auto 0 auto 20px;
+}
+
+.header-logo-img {
+    max-height: 100px;
+    max-width: 100px;
+    transition: all 0.3s ease-out; /* pos-neg変更時の色の変化の際 */
+}
+
+
+/* Shrinking */
+.header.shrink {
+    height: 90px;
+}
+
+.header.shrink h1 {
+    font-size: 2em;
+}
+
+/* ヘッダーのテキストのサイズ及び位置 */
+.header.shrink .header-name-outer {
+    font-size: 1.5em;
+}
+
+/* パンダのサイズ */
+.header.shrink .header-logo-img {
+    height: 60px;
+}

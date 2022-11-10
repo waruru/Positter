@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 検索画面 {% endblock %}
+
+{% block head %}
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
+{% endblock %}
+
+{#<body class="w-full transition ease-in-out delay-100" id="body" style="background-color: #fff0df">#}
+{% block contents %}
+  <main class="max-w-screen-md mx-auto py-16">
+
+    <form name="searchForm" action="/result" method="get" class="flex justify-center mx-auto w-full"
+          id="search-form">
+      <div class="relative w-full">
+        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+          <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor"
+               viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <input type="text" name="tf-keyword" id="keyword"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg shadow-md block w-full h-16 pl-10 p-2.5"
+               placeholder="Search" required>
+      </div>
+      <button type="submit"
+              class="w-16 p-5 ml-2 text-sm font-medium text-white bg-gray-200 rounded-lg border border-gray-300 shadow-md hover:bg-gray-300 transition ease-in-out delay-100">
+        <svg class="w-5 h-5" fill="none" stroke="black" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </button>
+      <input id="pos-neg" type="hidden" name="pos-neg" value="positive">
+    </form>
+
+    <div class="w-full mt-10 flex justify-center">
+      <button class="w-32 p-5 text-xl font-medium text-white rounded-lg border border-gray-300 shadow-md"
+              style="background-color: #fdd7a9" onclick="toPositiveSearch()">
+        Positive
+      </button>
+      <button class="w-32 p-5 ml-12 text-xl font-medium text-white rounded-lg border border-gray-300 shadow-md"
+              style="background-color: #9cc4fc" onclick="toNegativeSearch()">
+        Negative
+      </button>
+    </div>
+
+    <div class="w-full bg-white rounded-lg border shadow-md my-10">
+      <h2 class="font-medium leading-tight text-2xl py-4 px-8 bg-gray-200 rounded-t-lg">Trend</h2>
+      <ul class="w-full divide-gray-200 divide-y">
+        {% for trend in trends %}
+          <li class="py-5 px-8 cursor-pointer hover:bg-gray-100 transition ease-in-out delay-100"
+              onclick="submit('{{ trend.name }}')">
+            <div class="flex items-center space-x-4">
+              <div class="flex-1 min-w-0">
+                <p class="text-xl font-medium text-gray-900 truncate dark:text-white">
+                  {{ trend.name }}
+                </p>
+                {% if trend.tweet_volume %}
+                  <p class="text-sm text-gray-500 truncate dark:text-gray-400 mt-2">
+                    ツイート数：{{ trend.tweet_volume }}tweets
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </main>
+
+  <script>
+      const posColor = "#fff0df"
+      const negColor = "#e5f0ff"
+      const posEnhanceColor = "#fdd7a9"
+      const negEnhanceColor = "#9cc4fc"
+
+      const toPositiveSearch = () => {
+          const body = document.getElementById("body")
+          const headerName = document.getElementById("header-name")
+          const pandaLogo = document.getElementById("panda-logo")
+          const posNegInput = document.getElementById("pos-neg")
+
+          posNegInput.value = "positive"
+          body.style.backgroundColor = posColor
+          headerName.style.color = posColor
+          pandaLogo.src =
+              '{% static '/img/svg/okaimono_panda_posi.svg' %}'
+      }
+
+      const toNegativeSearch = () => {
+          const body = document.getElementById("body")
+          const headerName = document.getElementById("header-name")
+          const pandaLogo = document.getElementById("panda-logo")
+          const posNegInput = document.getElementById("pos-neg")
+
+          posNegInput.value = "negative"
+          body.style.backgroundColor = negColor
+          headerName.style.color = negColor
+          pandaLogo.src =
+              '{% static '/img/svg/okaimono_panda_nega.svg' %}'
+      }
+
+      const submit = (trendKeyword) => {
+          document.getElementById("keyword").value = trendKeyword
+          document.searchForm.submit()
+      }
+  </script>
+
+{% endblock %}

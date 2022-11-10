@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <meta name="search" content="検索画面">
+
+  <!--CSS-->
+  <link rel='stylesheet' href="{% static 'css/style.css' %}" type='text/css' media='all'/>
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Philosopher">
+  <!--<link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />-->
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  {% block head %}{% endblock %}
+</head>
+
+<body id="body" class="body">
+
+<!-- 全ページに共通のヘッダー -->
+<header class="header">
+  <div class="wrapper">
+    <div class="header-name-outer">
+      <div id="header-name" class="header-name">
+        Positter
+      </div>
+    </div>
+
+    <div class="header-logo-outer">
+      <a href="/">
+        <img class="header-logo-img" src="{% static '/img/svg/okaimono_panda_posi.svg' %}" alt="icon of panda"
+             id="panda-logo">
+      </a>
+    </div>
+  </div>
+</header>
+
+{% block contents %}{% endblock %}
+
+<!-- スクロールしたら収縮するやつ (できていない) -->
+
+<!--
+<script>
+  $(window).scroll(function() {
+    if ($(document).scrollTop() > 150) {
+      $('header').addClass('shrink');
+    } else {
+      $('header').removeClass('shrink');
+    }
+  });
+</script>
+-->
+<script type="text/javascript" src="{% static 'js/shrink.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2632f8d1-336f-43a2-bf71-362c7ee58523" name="変更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DpCbkpKhpyLCS7NeYekmAP4L77" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Main-Team-team13" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Main-Team-team13" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="デフォルトタスク">
+      <changelist id="2632f8d1-336f-43a2-bf71-362c7ee58523" name="変更" comment="" />
+      <created>1661386712901</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661386712901</updated>
+      <workItem from="1661386714279" duration="274000" />
+      <workItem from="1661387238295" duration="44000" />
+      <workItem from="1661387331938" duration="1143000" />
+      <workItem from="1661389022621" duration="260000" />
+      <workItem from="1661389324102" duration="21000" />
+      <workItem from="1661392439104" duration="247000" />
+      <workItem from="1661393021441" duration="139000" />
+      <workItem from="1661393248552" duration="293000" />
+      <workItem from="1661393854923" duration="26000" />
+      <workItem from="1661393896619" duration="8000" />
+      <workItem from="1661393920953" duration="11000" />
+      <workItem from="1661395071245" duration="34000" />
+      <workItem from="1661395121783" duration="44000" />
+      <workItem from="1661395189423" duration="41000" />
+      <workItem from="1661400691166" duration="16000" />
+      <workItem from="1661400717051" duration="10000" />
+      <workItem from="1661400740179" duration="19000" />
+      <workItem from="1661404729283" duration="611000" />
+      <workItem from="1661405434009" duration="13000" />
+      <workItem from="1661406235744" duration="126000" />
+      <workItem from="1661407599435" duration="306000" />
+      <workItem from="1661459673408" duration="429000" />
+      <workItem from="1661460525093" duration="264000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
