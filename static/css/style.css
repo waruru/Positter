@@ -251,8 +251,3 @@ body {
 .header.shrink .header-name-outer {
     font-size: 1.5em;
 }
-
-/* パンダのサイズ */
-.header.shrink .header-logo-img {
-    height: 60px;
-}
