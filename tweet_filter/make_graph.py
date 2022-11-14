@@ -2,7 +2,7 @@ import numpy as np
 import japanize_matplotlib
 import math
 import matplotlib.pyplot as plt
-
+from composeexample.settings import BASE_DIR
 
 def make_hist(scores: list, max_score: float, positive: str):
     if positive == "positive":
@@ -38,8 +38,8 @@ def make_chart(scores: list, positive: str) -> str:
 
     backcol = '#fff0df' if positive == "positive" else '#e5f0ff'
     fig = plt.figure(facecolor= backcol)
-    pathes, labels, pcts = plt.pie(pos_neg, labels= ['ポジティブ', 'ネガティブ'], colors= ['darkorange', 'darkcyan'], 
-                                   autopct= "%.1f%%", labeldistance= 0.5, rotatelabels= False, pctdistance= 0.65, 
+    pathes, labels, pcts = plt.pie(pos_neg, labels= ['ポジティブ', 'ネガティブ'], colors= ['darkorange', 'darkcyan'],
+                                   autopct= "%.1f%%", labeldistance= 0.5, rotatelabels= False, pctdistance= 0.65,
                                    radius= 1.5, startangle= 90, shadow= True,
                                    wedgeprops={'linewidth': 2, 'edgecolor':"white"},
                                    textprops={'color': "white", 'weight': "bold"})
@@ -59,7 +59,7 @@ def make_chart(scores: list, positive: str) -> str:
     else:
         pathes[1].set_alpha(0.8)
 
-    fname = 'static/img/piechart.png'
+    fname = BASE_DIR+'/static/img/piechart.png'
     plt.savefig(fname)
     plt.close()
 
@@ -72,7 +72,7 @@ def make_maghist(magnitudes: list, positive: str) -> str:
     plt.xlim(0, math.ceil(max(magnitudes)))
     plt.xlabel('熱 意', fontsize= 15)
 
-    fname = 'static/img/magnitude.png'
+    fname = BASE_DIR+'/static/img/magnitude.png'
     plt.savefig(fname)
     plt.close()
 
@@ -85,7 +85,7 @@ def make_scorehist(scores: list, positive: bool) -> str:
     plt.xlim(-1, 1)
     plt.xlabel('評 価', fontsize= 15)
 
-    fname = 'static/img/score.png'
+    fname = BASE_DIR+'/static/img/score.png'
     plt.savefig(fname)
     plt.close()
 
