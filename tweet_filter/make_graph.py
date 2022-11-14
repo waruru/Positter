@@ -1,6 +1,5 @@
 import numpy as np
 import os
-import japanize_matplotlib
 import math
 import matplotlib.pyplot as plt
 from composeexample.settings import BASE_DIR
