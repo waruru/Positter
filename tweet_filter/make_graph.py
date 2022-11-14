@@ -1,4 +1,5 @@
 import numpy as np
+import os
 import japanize_matplotlib
 import math
 import matplotlib.pyplot as plt
@@ -59,7 +60,7 @@ def make_chart(scores: list, positive: str) -> str:
     else:
         pathes[1].set_alpha(0.8)
 
-    fname = BASE_DIR+'/static/img/piechart.png'
+    fname = os.path.join(BASE_DIR, "static/img/piechart.png")
     plt.savefig(fname)
     plt.close()
 
@@ -72,7 +73,7 @@ def make_maghist(magnitudes: list, positive: str) -> str:
     plt.xlim(0, math.ceil(max(magnitudes)))
     plt.xlabel('熱 意', fontsize= 15)
 
-    fname = BASE_DIR+'/static/img/magnitude.png'
+    fname = os.path.join(BASE_DIR, 'static/img/magnitude.png')
     plt.savefig(fname)
     plt.close()
 
@@ -85,7 +86,7 @@ def make_scorehist(scores: list, positive: bool) -> str:
     plt.xlim(-1, 1)
     plt.xlabel('評 価', fontsize= 15)
 
-    fname = BASE_DIR+'/static/img/score.png'
+    fname = os.path.join(BASE_DIR, 'static/img/score.png')
     plt.savefig(fname)
     plt.close()
 
